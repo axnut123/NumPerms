@@ -1,3 +1,6 @@
+<img width="1778" height="404" alt="numperms" src="https://github.com/user-attachments/assets/cede1ee8-73f9-450c-8732-e0c1d7be1558" />
+
+
 # NumPerms
 A permission library using number or 2 digits of letters to indicate permission nodes, groups and users. Designed for TI Nspire CX II.
 
