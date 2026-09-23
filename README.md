@@ -12,4 +12,4 @@ A permission library using number or 2 digits of letters to indicate permission 
 
 # Warnings
 
-The Allocated node from a user will remain their nodes after being removed. You should remove the nodes first before you remove the Node, User and Group.
+The Allocated node from a user will remain their nodes after being removed. You should remove the nodes under a user first before you remove the Node, User and Group.
