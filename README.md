@@ -1,7 +1,7 @@
 # NumPerms
 A permission library using number or 2 digits of letters to indicate permission nodes, groups and users. Designed for TI Nspire CX II.
 
-#How to install?
+# How to install?
 1. Download tns file from release tab, use https://nspireconnect.ti.com/nsc/ webapp to copy it in your calculator.
 
 2. If you have PyLib folder, put the tns in it. If you don't have it, create one and put the tns there.
@@ -9,3 +9,7 @@ A permission library using number or 2 digits of letters to indicate permission 
 3. Refreash lib. Press 2>menu>B to refreash lib.
 
 4. You are all setup! Just import it in your project.
+
+# Warnings
+
+The Allocated node from a user will remain their nodes after being removed. You should remove the nodes first before you remove the Node, User and Group.
