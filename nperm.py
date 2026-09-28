@@ -14,7 +14,7 @@
 import sys
 from ti_system import store_value,recall_value,clear_history,get_key,get_platform
 
-VERSION=(1,1,0)
+VERSION=(1,1,1)
 
 def version():
   global VERSION
@@ -237,24 +237,23 @@ class User:
     store_value("u_"+str(name)+"_"+str(fatherGroup)+"_"+str(node),0)
     _cout("Removed node %s from group %s's user %s."%(node,fatherGroup,name))
     return 0
-#  
-# Discarded function. I am considering to remove or add features on it.
-#  @staticmethod
-#  def CheckNode(name,fatherGroup,node):
-#    if Node.exist(node,fatherGroup) is False:
-#      _cout("Node %s under %s does not exist."%(node,fatherGroup))
-#      return False
-#    if Group.exist(fatherGroup) is False:
-#      _cout("Group %s does not exist."%(fatherGroup))
-#      return False
-#    if User.exist(name,fatherGroup) is False:
-#      _cout("User %s under %s does not exist."%(name,fatherGroup))
-#      return False
-#    try:a=recall_value("u_"+str(name)+"_"+str(fatherGroup)+"_"+str(node))
-#    except:return False
-#    if a==0 or a==None:return False
-#    elif a==1:return True
-#    return False
+
+  @staticmethod
+  def CheckNode(name,fatherGroup,node):
+    if Node.exist(node,fatherGroup) is False:
+      _cout("Node %s under %s does not exist."%(node,fatherGroup))
+      return False
+    if Group.exist(fatherGroup) is False:
+      _cout("Group %s does not exist."%(fatherGroup))
+      return False
+    if User.exist(name,fatherGroup) is False:
+      _cout("User %s under %s does not exist."%(name,fatherGroup))
+      return False
+    try:a=recall_value("u_"+str(name)+"_"+str(fatherGroup)+"_"+str(node))
+    except:return False
+    if a==0 or a==None:return False
+    elif a==1:return True
+    return False
   
   @staticmethod
   def CompareNode(user1,name1,fatherGroup1,user2,name2,fatherGroup2):
@@ -308,15 +307,15 @@ class User:
     _cout("New weight for %s under %s set to %s."%(name,fatherGroup,str(weight)))
     return 0
     
-def main():
+def _main():
   outputs={0:"+"+"-"*15+"+",
-  1:"|   NumPerms 1.1.0    |",
-  2:"|   Running on %s         |"%(get_platform())}
+  1:"|   NumPerms 1.1.1    |",
+  2:"|   Running on: %s        |"%(get_platform())}
   for index in outputs:
     print(outputs.get(index))
   print(outputs.get(0))
   _cout("You are running this library as a program.")
-  _cout("In order to use it, please import this file in your program.")
+  _cout("In order to use it, please import this file into your program.")
   _cout("There are the list of the APIs:")
   help(User)
   help(Group)
@@ -324,4 +323,4 @@ def main():
   _quit(0)
 
 if __name__=="__main__":
-  main()
+  _main()
