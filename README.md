@@ -162,9 +162,11 @@ Removes an allocated node from a user. Returns `0` on success and `-1` on failur
 User.RemoveNode("ax", "ad", "rd")
 ```
 
-### `User.CheckNode(...)`
-Currently commented out/discarded in the source and is not an active API.
-
+### `User.CheckNode(name, fatherGroup, node)`
+Checks if an user has an allocated node from a group or not.
+```python
+User.CheckNode("ax","ad","rd")
+```
 ### `User.CompareNode(...)`
 Currently retained as a non-stable/reserved function in the source. It should not be treated as part of the stable API yet.
 
@@ -186,6 +188,9 @@ User.Create("ax", "ad", 50)
 # Allocate nodes to the user
 User.AllocateNode("ax", "ad", "rd")
 User.AllocateNode("ax", "ad", "wr")
+
+#Check a user's node from a group.
+User.CheckNode("ax", "ad", "rd")
 
 # Get a node's weight
 print(Node.GetWeight("rd", "ad"))
